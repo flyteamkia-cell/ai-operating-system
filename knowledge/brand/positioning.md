@@ -1,5 +1,5 @@
 ---
-owner: TBD
+owner: brand-curator
 lang: fa-IR
 status: draft
 updated: 2026-07-25

@@ -20,9 +20,17 @@ Track A (API ingestion) stays on the roadmap unchanged. The two converge later: 
 
 Tasks are ordered by dependency. Each produces value on its own and can be stopped after.
 
+## Status as of 2026-08-08
+
+✅ **Done:** T1–T6 (documentation and governance), T8 (first analysis run — `knowledge/content/patterns.md` v4, built from 151 + 20 + 62 posts).
+▶ **Next:** T9 (first generation run) — blocked only on the operator's approval of ADR-0009's audience/conversion decision.
+⏳ **Outstanding, operator-side:** T7 collection surfaces; Instagram Graph API connection (time-critical, see below); the 20 mid/weak own-account posts.
+
+**The one item where delay causes permanent loss:** Instagram Graph API. Insight data is not retroactive, and Story insights expire within ~24 hours. Every day unconnected is a day of metrics that cannot be recovered by any later action — including the three-year account export, which contains captions and comments but no insight metrics.
+
 ---
 
-### T1 — Preserve the two source documents in the repository
+### T1 ✅ — Preserve the two source documents in the repository
 **Why:** `KNOWLEDGE_MANAGEMENT.md` cites a design document that exists only outside the repo. The audit flagged this: it contradicts "git is the source of truth," and a reader who clones the repo cannot open the cited file.
 **Do:** copy the two Google Drive documents (`social-media-project-instructions.md`, `content-system-handoff.md`) into `docs/source-notes/`, then fix the citation in `KNOWLEDGE_MANAGEMENT.md` to point at the local path.
 **Done when:** no document in the repository cites a file that is not in the repository.
@@ -30,7 +38,7 @@ Tasks are ordered by dependency. Each produces value on its own and can be stopp
 
 ---
 
-### T2 — Fix the two broken internal links
+### T2 ✅ — Fix the two broken internal links
 **Why:** audit finding. `docs/critique.md` and `docs/decisions/ADR-0005` both reference `architecture/0X-....md` without the `docs/` prefix — neither link resolves.
 **Do:** correct both paths.
 **Done when:** every internal link in the repo resolves.
@@ -38,7 +46,7 @@ Tasks are ordered by dependency. Each produces value on its own and can be stopp
 
 ---
 
-### T3 — Write ADR-0007: Change Approval Workflow
+### T3 ✅ — Write ADR-0007: Change Approval Workflow
 **Why:** the workflow currently governs this project by convention only. It exists in no file, so a future session or a second engineer cannot discover it.
 **Do:** write the ADR as previously proposed (context, decision, alternatives considered, consequences), plus a short operational section in `.claude/CLAUDE.md`.
 **Done when:** the rule is discoverable by anyone reading the repository cold.
@@ -46,7 +54,7 @@ Tasks are ordered by dependency. Each produces value on its own and can be stopp
 
 ---
 
-### T4 — Write ADR-0008: Track B and the relationship to viral-content-lab
+### T4 ✅ — Write ADR-0008: Track B and the relationship to viral-content-lab
 **Why:** this is the largest strategic decision made since Phase 0 and it currently exists only in chat. It must record: the existence of the installed skill, that its two engines are the evidence/intelligence/execution layers (not to be rebuilt), the decision to run a manual-evidence track in parallel with the API track, and the naming convention that prevents the two "Phase 1"s from colliding.
 **Do:** write the ADR. Update `docs/roadmap/roadmap.md` minimally — add Track B alongside the existing phases; do not rewrite the existing phases.
 **Done when:** someone reading only the repo understands why there are two parallel tracks and what each depends on.
@@ -54,7 +62,7 @@ Tasks are ordered by dependency. Each produces value on its own and can be stopp
 
 ---
 
-### T5 — Add the roles document
+### T5 ✅ — Add the roles document
 **Why:** four parties with overlapping capabilities and no shared channel. Without written role boundaries, work gets done twice and decisions get made by the wrong party.
 **Do:** add `02-roles-and-responsibilities.md` to the repo as `docs/governance/roles.md`.
 **Done when:** committed and referenced from `README.md`'s map.
@@ -62,7 +70,7 @@ Tasks are ordered by dependency. Each produces value on its own and can be stopp
 
 ---
 
-### T6 — Reconcile the collection schema (documentation only, no code)
+### T6 ✅ — Reconcile the collection schema (documentation only, no code)
 **Why:** the proposed 5-sheet structure and the existing swipe-file schema must not diverge, or the existing Python parser stops working and has to be rewritten for no benefit.
 **Do:** write a short document mapping the collection schema to the repository's SQLite tables (`competitor_post`, `content`, `publication`, `metric_snapshot`). Note explicitly which columns are permanently unavailable for competitor accounts and why.
 **Done when:** one document answers "where does each collected field end up, and which fields are structurally always empty."
@@ -82,7 +90,7 @@ Tasks are ordered by dependency. Each produces value on its own and can be stopp
 
 ---
 
-### T8 — First real analysis run
+### T8 ✅ — First real analysis run
 **Why:** this is the first moment the system produces something that could not have been produced without it.
 **Do:** once 20–30 reference posts are collected — run `parse_telegram_export.py` (if Telegram) then `analyze_swipe_file.py`, read the completeness report **before** forming any opinion, run the teardown rubric on the top-ranked posts, and produce the first `patterns.md`.
 **Done when:** `patterns.md` exists with patterns ranked by evidence strength, single-occurrence patterns explicitly labelled as hypotheses rather than findings, and an honest statement if the sample is too thin to support any of it.
@@ -91,7 +99,7 @@ Tasks are ordered by dependency. Each produces value on its own and can be stopp
 
 ---
 
-### T9 — First generation run
+### T9 ▶ — First generation run
 **Why:** closes the loop end to end for the first time.
 **Do:** generate 5 content concepts from `patterns.md` using the skill's Phase 3 structure. Each concept references which pattern it came from, targets exactly one algorithmic signal, has one CTA, and carries an honest risk line. Spread across at least three distinct psychological mechanisms — five variations of one mechanism is one idea, not five.
 **Done when:** the Owner can approve or kill each idea in under ten seconds without reading a full script.
