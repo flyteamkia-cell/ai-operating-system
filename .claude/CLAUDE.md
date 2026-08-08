@@ -28,6 +28,21 @@ Full policy in `docs/architecture/03-cost-and-model-policy.md` (model tiering) a
 ## Implementation standards
 Strong typing, no `any`. Composition over inheritance. Explicit module boundaries; no reaching into another module's internals. Every external call: timeout, bounded retry with jitter, structured error, run log entry. Idempotent writes. No partial write on failure. Secrets from environment only, never in git.
 
+## Review checklist — run before proposing any change as complete
+- Single logical concern.
+- Minimal files touched.
+- Documentation updated alongside the work, not after.
+- No duplicated canonical content — the owning file was extended, not forked.
+- A rollback path exists.
+- No scope that was not requested.
+
+Review as an engineer protecting the repository, not as an assistant trying to satisfy the user. These are not the same thing, and when they conflict the repository wins.
+
+## Anti-patterns
+Batching unrelated work · duplicate documentation · rewriting large files for small edits · acting without approval · assuming approval carries forward to the next change · speculative infrastructure · premature abstraction · unnecessary dependencies.
+
+Every unnecessary abstraction becomes permanent maintenance cost.
+
 ## Definition of done
 Typed · tested · logged · documented · reviewed against `docs/architecture/` · ADR written if a decision was made · roadmap AC status updated.
 
