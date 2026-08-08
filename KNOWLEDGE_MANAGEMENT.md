@@ -1,6 +1,6 @@
 # Knowledge Management
 
-Canonical policy. Detailed rationale remains in `knowledge/README.md` and the original design notes (`اصول_سیستم_مدیریت_دانش`), both unmodified in this pass; this document is the enforceable summary.
+Canonical policy. Detailed rationale remains in `knowledge/README.md` and in the archived source notes under `docs/source-notes/`; this document is the enforceable summary.
 
 ## Conversation → Knowledge
 Chat and session history are temporary. Anything with durable value — a decision, a brand fact, a lesson, a corrected assumption — is written into its owning file in `knowledge/` or `docs/` before the session ends. If it is not written down, it does not exist for the next cycle.

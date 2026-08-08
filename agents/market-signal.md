@@ -13,7 +13,7 @@ version: 1.0
 
 **Outputs.**
 1. `reports/weekly/<ISO-week>/market.md` — recurring hook structures, caption architectures, format/length distribution, cadence, rising and saturated topics, gaps relative to the brand's pillars.
-2. Candidate hooks appended to `knowledge/market/hook-library.md`, each with a source permalink.
+2. Candidate hooks appended to `knowledge/content/hook-library.md`, each with a source permalink.
 
 **Tools.** Read-only competitor tables. No scraping (ADR-0005). No network beyond the ingest module.
 

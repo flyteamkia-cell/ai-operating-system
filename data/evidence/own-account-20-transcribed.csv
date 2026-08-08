@@ -1,0 +1,21 @@
+id,label,title,likes,comments,shares,saves,reach,awt_sec,follows,nf_pct,hook_type,cta_type,actionable,promise_kept
+1,good,اتریوم زیر ۲۶۰۰,1500,156,350,372,38433,20,452,62.3,question_number,implicit,yes,yes
+2,good,سه ارز مهم,1600,2800,126,287,25653,14,43,21.1,in_medias_res,dm_keyword,yes,yes
+3,good,ارز گرم در هوای سرد,2700,6800,93,228,47163,11,187,25.9,sensory_metaphor,dm_keyword,yes,partial
+4,good,لایو معرفی ارزها,1400,118,261,299,17826,86,29,17.7,greeting,none,yes,yes
+5,good,چه خبر از بیت کوین,3800,6600,715,699,60640,26,1236,45.1,audience_question,dm_keyword,yes,yes
+6,good,تحلیل فوری بیت,2200,2300,376,413,30763,0,141,22.8,slideshow,none,yes,yes
+7,good,بهترین نقاط ورود ۶ ارز,3700,407,1800,2500,72983,0,154,27.6,slideshow_list,none,yes,yes
+8,good,بازار پامپ شد,9500,7100,8300,9400,228901,0,5334,78.6,slideshow_question,none,yes,yes
+9,good,بیت کوین ۸۲۰۰۰ دلار,2500,99,751,554,77884,0,949,72.8,question_number,implicit,yes,yes
+10,good,دلار ۱۲۰ هزار تومن,2100,125,1300,422,60700,0,319,58.1,urgency,none,yes,yes
+11,weak,یک تجربه دلی,357,37,11,12,6467,13,4,26.9,bait_and_switch,none,no,no
+12,weak,تنها راه شکست دادن بازار,241,27,0,15,5847,7,6,22.0,self_negating,none,no,no
+13,weak,دلار بین جنگ و مذاکره,276,275,39,16,7645,13,17,31.5,requires_prior_context,dm_keyword,no,partial
+14,weak,شکار طلا,233,42,22,34,7474,14,28,30.9,hedged_meta,none,partial,partial
+15,weak,تاثیر بیت کوین در بازار,296,18,0,25,6712,0,2,21.1,mid_answer,none,no,no
+16,weak,وقت فروش دلاره,387,21,39,21,7038,14,5,24.4,dismissal,none,no,partial
+17,weak,عیدی آیفون ۱۶,180,28,2,4,5073,5,0,16.7,promotion,weak_cta,no,no
+18,weak,مسیر ترید اصولی,287,250,19,30,5907,8,4,21.0,promotion,weak_cta,no,no
+19,weak,استراتژی درست در بحران,266,27,0,14,6261,10,1,36.2,meta_promise,none,no,partial
+20,weak,پیش بینی هوش مصنوعی,300,6,0,24,8600,11,1,16.0,generic,none,no,no

@@ -22,4 +22,4 @@ journal/    decisions and lessons, one file per month
 _archive/   superseded material, never deleted
 ```
 
-Rules: one owner per file · update in place, do not fork near-duplicates · claims about performance cite `content_id`s · superseded content moves to `_archive/` with a reason.
+Rules for writing here: see `KNOWLEDGE_MANAGEMENT.md` (canonical policy) and `agents/README.md` (file ownership). In short: one owner per file, update in place, cite `content_id`s for performance claims.

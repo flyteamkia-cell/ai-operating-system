@@ -12,6 +12,12 @@ Three "free" constraints apply simultaneously: (1) a free claude.ai account, not
 
 ## Decision
 - **Do not upgrade claude.ai to Pro to unblock this project.** Use claude.ai (free) for architecture conversations, review, and reading reports. Use **Claude Code authenticated via a Console API key** as the implementation engine, with a hard spending cap set at console.anthropic.com (start at $10/month; the cost policy in `03-cost-and-model-policy.md` is designed to keep steady-state spend low and flat).
+
+> **Superseded in part — 2026-08-08.** The operator purchased **Claude Pro**, chosen over Max pending evidence that the higher usage ceiling is needed. Claude Code is therefore accessed through the subscription's OAuth login rather than a metered Console API key, and the $10 API cap above no longer applies to interactive work.
+>
+> The reasoning in this ADR is retained because it remains correct and load-bearing: nothing in this project *requires* a subscription, and the API-key path stays the documented fallback if the subscription is dropped or if unattended automation (which cannot use OAuth) needs to make model calls. Items 2–4 below — Meta Development Mode, GitHub Actions as scheduler, and the action items — are unaffected.
+>
+> Revisit trigger for Max: hitting the Pro usage ceiling during normal weekly-cycle work, not merely during an unusually heavy session.
 - **Do not wait for Meta App Review to start Phase 1.** Add the operator's own Instagram account as Admin/Tester on the Meta app now; own-account ingestion, insights and the whole feedback loop work fully in Development Mode. Defer the App Review question to Phase 4 and re-verify the current permission requirement for `business_discovery` at that time — Meta's access tiers change and must not be assumed from training-era knowledge.
 - **Do not provision a server.** GitHub Actions (free tier, personal account) is the scheduler for both `weekly-cycle` and `post-publish-capture` (ADR-0003 already chose CLI+cron over an orchestrator; this just names the free host for that cron). Secrets (`IG_LONG_LIVED_TOKEN`, `ANTHROPIC_API_KEY`, etc.) go in GitHub Actions encrypted secrets, never committed.
 

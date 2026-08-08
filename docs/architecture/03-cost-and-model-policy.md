@@ -10,6 +10,8 @@ Cost is a first-class architectural constraint. The design target is a **stable 
 | Tagging, classification, dedup detection, formatting, transcription cleanup | Small (Haiku-class) | Mechanical, verifiable, high volume |
 | Counting, ranking, aggregation, comparison, thresholds | **No model** | Deterministic code |
 
+*This tiering selects a model within whichever provider is active. Cross-provider selection and failover are the LLM Abstraction Layer's job — see `00-system-overview.md` § LLM Abstraction Layer.*
+
 ## Context Pack contract
 Every agent invocation receives exactly one pack, assembled by `src/context/`:
 - Hard ceiling: 8,000 tokens (brand core ≤2k, performance summary ≤3k, market signal ≤2k, task input ≤1k).

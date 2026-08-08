@@ -18,7 +18,7 @@ Cut or deferred, with reasons:
 
 Two things the original design **missed entirely**, now central:
 
-1. **The identity spine.** Nothing linked an idea to a published media ID to its metrics. Every "learning" claim would have been unfalsifiable. Fixed by `content_id` (`architecture/01-data-model.md`).
+1. **The identity spine.** Nothing linked an idea to a published media ID to its metrics. Every "learning" claim would have been unfalsifiable. Fixed by `content_id` (`docs/architecture/01-data-model.md`).
 2. **Falsifiability.** "Analyze why reel #23 worked" over a sample of one, with no declared hypothesis, produces confident narrative and zero knowledge. Every brief now declares a hypothesis and exactly one manipulated variable (`Experiment`).
 
 One correction on the business framing: the proposed KPI set (reach, saves, retention, follower growth) is entirely upstream. Without a defined conversion event the system will optimize for reach — the cheapest and least valuable outcome for a financial-markets brand. Open question **[B2]**.
