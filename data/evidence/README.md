@@ -7,7 +7,7 @@ Manually collected performance data (Track B, ADR-0008). Own-account data only �
 | `own-account-151-posts.csv` | 151 | Reels and carousels: likes, comments, shares, saves, reach, follows, non-follower % |
 | `own-account-20-transcribed.csv` | 20 | Subset with full transcripts, coded for hook type, CTA type, actionability, promise-kept. 10 labelled good, 10 weak by the operator |
 | `peer-accounts-62-posts.csv` | 62 | Five independent accounts (100k–751k followers), public data only: views, likes, comments, shares, plus full video text |
-| `own-account-api-full-493posts.csv` | 493 (413 after filter) | **Pending addition** — pulled directly from the Instagram Graph API in session 2026-08-26, awaiting Instagram reconnection to re-fetch. Findings already documented in `knowledge/content/patterns.md` v5. |
+| `own-account-api-full.csv` | 653 raw / 493 with insights / 413 after reach≥500 filter | Direct pull from the Instagram Graph API, 2026-08-27. Highest-confidence own-account source: no manual entry, no transcription. Per-post `follow_type` breakdown is **not available** at the media-insights level (Graph API only supports `action_type`/`story_navigation_action_type` breakdowns here) — P-001 (carousel vs. reel non-follower reach) remains untestable with this source. |
 
 Analysis: `scripts/analyze_own_account.py`. Findings: `knowledge/content/patterns.md`.
 
