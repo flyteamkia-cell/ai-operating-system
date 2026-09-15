@@ -1,0 +1,4 @@
+scope: project:ai-operating-system
+display_name: Ai Operating System
+write_policy: direct
+notes_dir: topics/
