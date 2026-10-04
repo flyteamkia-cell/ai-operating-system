@@ -43,3 +43,5 @@ These are recorded rather than silently corrected. A guessed value is worse than
 - Always record follower count at time of posting; without it no cross-account comparison is valid.
 - Weak posts are required, not optional. A set containing only winners produces false patterns.
 - Never merge peer or competitor data into these files. Different metric availability, different confidence tier — keep them in separate files.
+
+| `own-account-stories-api.csv` | 4 (append-only log) | Active stories via Graph API (`/stories` returns only the last 24h; no history). Metrics: reach, replies, shares, total_interactions, follows, profile_visits, navigation (total only; per-type exits/back/forward breakdown not captured). Captured 2026-10-04 (stories of 2026-10-03). Must be re-captured at least every 24h or data is lost; older story data exists only in the manual 2024–2025 sheets. |
