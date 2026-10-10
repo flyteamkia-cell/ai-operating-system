@@ -1,0 +1,47 @@
+name: Capture Instagram stories
+
+# Stories and their insights disappear 24h after posting. Every 6h means each story
+# is seen several times and its last capture is close to the final numbers.
+on:
+  schedule:
+    - cron: "15 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capture-stories
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Capture active stories
+        env:
+          IG_LONG_LIVED_TOKEN: ${{ secrets.IG_LONG_LIVED_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          IG_APP_ID: ${{ secrets.IG_APP_ID }}
+          IG_APP_SECRET: ${{ secrets.IG_APP_SECRET }}
+          IG_GRAPH_VERSION: ${{ vars.IG_GRAPH_VERSION }}
+        run: python scripts/capture_stories.py
+
+      - name: Commit updated log
+        run: |
+          if git diff --quiet -- data/evidence/own-account-stories-api.csv; then
+            echo "No change"; exit 0
+          fi
+          git config user.name "aios-bot"
+          git config user.email "aios-bot@users.noreply.github.com"
+          git add data/evidence/own-account-stories-api.csv
+          git commit -m "Evidence: story capture $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
