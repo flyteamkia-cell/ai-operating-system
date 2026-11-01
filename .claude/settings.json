@@ -1,0 +1,8 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [{ "hooks": [{ "type": "command",
+      "command": "sh -c 'command -v saga >/dev/null 2>&1 && saga hook || true'" }] }],
+    "PreToolUse": [{ "hooks": [{ "type": "command",
+      "command": "sh -c 'command -v saga >/dev/null 2>&1 && saga guard || true'" }] }]
+  }
+}
