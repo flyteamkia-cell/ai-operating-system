@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "saga": { "command": "saga", "args": ["mcp"] }
+  }
+}
