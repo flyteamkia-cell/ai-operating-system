@@ -1,6 +1,6 @@
 # ADR-0010 — Saga as agent session memory (dev tooling only)
 
-Status: Proposed · Date: 2026-11-01 · Owner: Architecture
+Status: Accepted · Date: 2026-11-01 · Owner: Architecture
 
 ## Context
 Claude Code sessions start blank; project context is re-derived every session. `.saga/` (mopanc/saga topic notes) already exists in the repo since 6e47cc1 but is not wired in.
